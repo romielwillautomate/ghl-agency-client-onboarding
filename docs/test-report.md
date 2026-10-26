@@ -287,7 +287,7 @@ The Slack summary and the alerts are shown in the README, "What people see".
 
 - Real Stripe, HighLevel and Slack accounts. Every request shape follows the official docs, but no request reached a real service. In particular the HighLevel OAuth flow (the agency token, its refresh, the app install on new sub-accounts) and the plan gate are not exercised: the mock takes a fixed token.
 - The native GoHighLevel workflows themselves: whether the Contact Tag trigger fires for a tag added through the API, the welcome email, the tasks, the wait and the branches. Their calls to n8n are played by the test.
-- Load. The test onboards 21 clients one after another (two at the same moment once). HighLevel's rate limits at volume were not tested beyond a 429 on one custom value and three on one create.
+- Load. The test pays for 21 clients one after another (two at the same moment once). HighLevel's rate limits at volume were not tested beyond a 429 on one custom value and three on one create.
 - Real races and crashes. The run lock, a lock left by a crashed run and an onboarding cut off by a restart were tested by putting the ledger into the state they leave, plus two deliveries sent at the same moment; n8n was not stopped in the middle of a run.
 
 ## Findings
